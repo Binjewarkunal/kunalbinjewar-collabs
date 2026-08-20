@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunal Binjewar — Brand Collaborations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600;1,9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #150B27;
+    --ink-soft: #241640;
+    --surface: #FBF9FF;
+    --surface-card: #FFFFFF;
+    --line: rgba(21,11,39,0.09);
+    --text: #1F1235;
+    --text-mute: #6C6480;
+    --text-inverse: #F4F1FA;
+    --text-inverse-mute: #C3B8DE;
+
+    --amber:  #F5A623;
+    --blue:   #3B82F6;
+    --rose:   #EC4899;
+    --teal:   #14B8A6;
+    --violet: #8B5CF6;
+    --red:    #EF4444;
+
+    --grad-hero: linear-gradient(125deg, #FF8A3D 0%, #E8546B 32%, #7C3AED 68%, #2A0E5C 100%);
+
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 10px;
+
+    --ease: cubic-bezier(.22,.9,.32,1);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--surface);
+    color:var(--text);
+    font-family:'Manrope', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3, .display{
+    font-family:'Fraunces', serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{ color:inherit; }
+  img{ display:block; max-width:100%; }
+  ::selection{ background:var(--violet); color:#fff; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .wrap{ padding:0 20px; } }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    transition:transform .5s var(--ease), background-color .4s ease, box-shadow .4s ease;
+    background:transparent;
+  }
+  .nav.scrolled{
+    background:rgba(251,249,255,0.82);
+    backdrop-filter:blur(14px);
+    box-shadow:0 1px 0 var(--line);
+  }
+  .nav.hide{ transform:translateY(-110%); }
+  .nav-name{
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
+    color:var(--text-inverse);
+    display:flex; align-items:center; gap:10px;
+    transition:color .4s ease;
+  }
+  .nav.scrolled .nav-name{ color:var(--ink); }
+  .nav-dot{ width:8px; height:8px; border-radius:50%; background:var(--amber); box-shadow:0 0 0 4px rgba(245,166,35,.25); }
+  .nav-cta{
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:.82rem;
+    text-decoration:none; padding:10px 20px; border-radius:100px;
+    background:var(--text-inverse); color:var(--ink);
+    transition:transform .3s var(--ease), background .3s ease, color .3s ease;
+    white-space:nowrap;
+  }
+  .nav.scrolled .nav-cta{ background:var(--ink); color:var(--text-inverse); }
+  .nav-cta:hover{ transform:translateY(-2px); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--grad-hero);
+    background-size:220% 220%;
+    animation:heroShift 18s ease-in-out infinite;
+    color:var(--text-inverse);
+    padding:150px 0 110px;
+    overflow:hidden;
+  }
+  @keyframes heroShift{
+    0%{ background-position:0% 30%; }
+    50%{ background-position:100% 70%; }
+    100%{ background-position:0% 30%; }
+  }
+  .hero-blob{
+    position:absolute; border-radius:50%; filter:blur(70px);
+    opacity:.5; pointer-events:none;
+  }
+  .blob-1{ width:420px; height:420px; background:#FFB25A; top:-120px; right:-100px; }
+  .blob-2{ width:360px; height:360px; background:#6D28D9; bottom:-140px; left:-80px; }
+
+  .hero-inner{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:64px; align-items:center;
+  }
+  @media (max-width:920px){
+    .hero-inner{ grid-template-columns:1fr; gap:48px; }
+    .hero{ padding:120px 0 80px; }
+  }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:.76rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:#FFD9A8;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{ content:''; width:22px; height:1px; background:#FFD9A8; }
+
+  .hero h1{
+    font-size:clamp(2.3rem, 5.2vw, 3.85rem);
+    line-height:1.06;
+    font-weight:600;
+    max-width:14ch;
+  }
+  .hero h1 em{ font-style:italic; font-weight:500; color:#FFD9A8; }
+
+  .hero-sub{
+    margin-top:22px; font-size:1.05rem; line-height:1.65;
+    color:var(--text-inverse-mute); max-width:46ch; font-weight:500;
+  }
+
+  .hero-actions{ margin-top:36px; display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:.88rem;
+    padding:15px 26px; border-radius:100px; text-decoration:none;
+    display:inline-flex; align-items:center; gap:9px;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s ease;
+    border:1px solid transparent;
+  }
+  .btn-solid{ background:var(--text-inverse); color:var(--ink); }
+  .btn-solid:hover{ transform:translateY(-3px); box-shadow:0 14px 28px rgba(0,0,0,.28); }
+  .btn-ghost{ border-color:rgba(244,241,250,.4); color:var(--text-inverse); }
+  .btn-ghost:hover{ transform:translateY(-3px); background:rgba(244,241,250,.12); }
+  .btn svg{ width:15px; height:15px; transition:transform .3s var(--ease); }
+  .btn:hover svg{ transform:translate(3px,-3px); }
+
+  .stat-row{ margin-top:48px; display:flex; gap:34px; flex-wrap:wrap; }
+  .stat{ }
+  .stat b{
+    display:block; font-family:'Fraunces',serif; font-weight:600; font-size:1.9rem;
+    color:#fff;
+  }
+  .stat span{ font-size:.78rem; color:var(--text-inverse-mute); font-weight:600; letter-spacing:.02em; }
+
+  .hero-photo-wrap{ position:relative; justify-self:center; }
+  .hero-photo{
+    width:min(340px, 78vw); aspect-ratio:1/1; border-radius:50%;
+    overflow:hidden; position:relative; z-index:2;
+    border:5px solid rgba(255,255,255,.18);
+    box-shadow:0 30px 60px rgba(10,0,30,.4);
+  }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; }
+  .ring{
+    position:absolute; inset:-22px; border-radius:50%;
+    border:1px dashed rgba(255,255,255,.35);
+    animation:spin 40s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .badge-float{
+    position:absolute; bottom:6px; left:-18px; z-index:3;
+    background:var(--surface-card); color:var(--ink);
+    padding:11px 16px; border-radius:100px;
+    font-size:.78rem; font-weight:700;
+    box-shadow:0 14px 30px rgba(10,0,30,.28);
+    display:flex; align-items:center; gap:8px;
+  }
+  .badge-float span.pulse{ width:8px; height:8px; border-radius:50%; background:#22C55E; position:relative; }
+  .badge-float span.pulse::after{
+    content:''; position:absolute; inset:0; border-radius:50%; background:#22C55E;
+    animation:pulse 1.8s ease-out infinite;
+  }
+  @keyframes pulse{ 0%{ transform:scale(1); opacity:.7;} 100%{ transform:scale(3); opacity:0; } }
+
+  /* ---------- INTRO ---------- */
+  .intro{ padding:96px 0 40px; }
+  .intro-top{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap;
+    margin-bottom:44px;
+  }
+  .intro-kicker{
+    font-size:.76rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--violet);
+    margin-bottom:14px; display:block;
+  }
+  .intro h2{
+    font-size:clamp(1.8rem, 3.4vw, 2.5rem); font-weight:600; line-height:1.12; max-width:16ch;
+  }
+  .intro-copy{ max-width:34ch; color:var(--text-mute); font-size:.98rem; line-height:1.65; font-weight:500; }
+
+  /* filter chips */
+  .filters{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:6px; }
+  .chip{
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:.8rem;
+    padding:10px 18px; border-radius:100px; border:1px solid var(--line);
+    background:var(--surface-card); color:var(--text-mute); cursor:pointer;
+    display:flex; align-items:center; gap:8px;
+    transition:all .3s var(--ease);
+  }
+  .chip .dot{ width:8px; height:8px; border-radius:50%; background:var(--dot,#999); }
+  .chip:hover{ transform:translateY(-2px); border-color:var(--ink); color:var(--ink); }
+  .chip.active{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .chip.active .dot{ box-shadow:0 0 0 3px rgba(255,255,255,.25); }
+
+  /* ---------- WALL ---------- */
+  .wall{ padding:36px 0 100px; }
+  .grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;
+  }
+  @media (max-width:960px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px){ .grid{ grid-template-columns:1fr; } }
+
+  .card{
+    background:var(--surface-card);
+    border-radius:var(--radius-lg);
+    border:1px solid var(--line);
+    padding:26px 24px 24px;
+    position:relative; overflow:hidden;
+    transition:opacity .7s var(--ease), transform .7s var(--ease), box-shadow .35s ease, border-color .35s ease;
+    display:flex; flex-direction:column; min-height:250px;
+  }
+  .card.pre-reveal{ opacity:0; transform:translateY(26px); }
+  .card.in-view{ opacity:1; transform:translateY(0); }
+  .card.hidden-filter{ display:none; }
+  .card::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:5px;
+    background:var(--accent, var(--violet));
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 22px 44px rgba(21,11,39,.12);
+    border-color:transparent;
+  }
+  .card-top{
+    display:flex; align-items:center; justify-content:space-between; margin-bottom:22px;
+  }
+  .card-index{ font-size:.72rem; font-weight:800; letter-spacing:.06em; color:var(--text-mute); }
+  .card-tag{
+    font-size:.68rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent, var(--violet));
+    background:color-mix(in srgb, var(--accent, var(--violet)) 12%, white);
+    padding:5px 10px; border-radius:100px;
+  }
+  .card-brand{
+    font-family:'Fraunces',serif; font-weight:600; font-style:italic;
+    font-size:clamp(1.7rem, 2.6vw, 2.15rem);
+    line-height:1; margin-bottom:14px; color:var(--ink);
+  }
+  .card-tagline{
+    font-size:.92rem; color:var(--text-mute); font-weight:500; line-height:1.55;
+    margin-bottom:22px; flex-grow:1;
+  }
+  .card-link{
+    font-size:.82rem; font-weight:800; text-decoration:none; color:var(--ink);
+    display:inline-flex; align-items:center; gap:7px; width:fit-content;
+    padding-bottom:2px; border-bottom:2px solid var(--accent, var(--violet));
+    transition:gap .3s var(--ease), color .3s ease;
+  }
+  .card-link:hover{ gap:12px; }
+  .card-link svg{ width:13px; height:13px; }
+
+  .card.more{
+    background:var(--ink); color:var(--text-inverse);
+    align-items:flex-start; justify-content:center;
+  }
+  .card.more::before{ background:linear-gradient(90deg,var(--amber),var(--rose),var(--violet)); }
+  .card.more h3{
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.5rem; margin-bottom:10px; color:#fff;
+  }
+  .card.more p{ color:var(--text-inverse-mute); font-size:.9rem; line-height:1.6; margin:0 0 20px; font-weight:500; }
+  .card.more .card-link{ color:#fff; border-color:var(--amber); }
+
+  /* ---------- CTA FOOTER ---------- */
+  .cta{
+    background:var(--ink); color:var(--text-inverse); padding:100px 0 60px;
+    position:relative; overflow:hidden;
+  }
+  .cta::before{
+    content:''; position:absolute; width:520px; height:520px; border-radius:50%;
+    background:radial-gradient(circle, rgba(139,92,246,.35), transparent 70%);
+    top:-220px; left:50%; transform:translateX(-50%);
+  }
+  .cta-inner{ position:relative; z-index:2; text-align:center; max-width:640px; margin:0 auto; }
+  .cta h2{
+    font-size:clamp(2rem, 4.4vw, 3rem); font-weight:600; line-height:1.12; margin-bottom:18px;
+  }
+  .cta h2 em{ color:#FFD9A8; font-style:italic; font-weight:500; }
+  .cta p{ color:var(--text-inverse-mute); font-size:1rem; line-height:1.6; font-weight:500; margin-bottom:38px; }
+  .cta-actions{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:56px; }
+
+  .footer-meta{
+    border-top:1px solid rgba(244,241,250,.14); padding-top:28px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+    font-size:.82rem; color:var(--text-inverse-mute); font-weight:600;
+  }
+  .footer-meta a{ text-decoration:none; color:var(--text-inverse); }
+  .footer-meta a:hover{ color:#FFD9A8; }
+  .footer-links{ display:flex; gap:22px; flex-wrap:wrap; }
+
+  .reveal{ transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.pre-reveal{ opacity:0; transform:translateY(24px); }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-name"><span class="nav-dot"></span>Kunal Binjewar</div>
+  <a class="nav-cta" href="#collabs">View Collaborations</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Influencer Marketing &amp; Brand Partnerships</span>
+      <h1>I connect brands with <em>the right creators.</em></h1>
+      <p class="hero-sub">30+ brand collaborations across quick commerce, fashion, auto, wellness and food — each one turned into a story worth watching. This page is the running record.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#collabs">
+          See the collaborations
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="mailto:binjewarkunal@gmail.com">
+          Let's talk
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+        </a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b data-count="25.2" data-suffix="K+">0</b><span>LinkedIn Followers</span></div>
+        <div class="stat"><b data-count="8.9" data-suffix="M+">0</b><span>Post Impressions</span></div>
+        <div class="stat"><b data-count="35" data-suffix="+">0</b><span>Brand Collaborations</span></div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="ring"></div>
+      <div class="hero-photo"><img src="profile.png" alt="Kunal Binjewar"></div>
+      <div class="badge-float"><span class="pulse"></span>Open for brand collabs</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO / FILTERS ============ -->
+<section class="intro">
+  <div class="wrap">
+    <div class="intro-top reveal">
+      <div>
+        <span class="intro-kicker">The Collaboration Wall</span>
+        <h2 class="display">Every campaign, filed and linked.</h2>
+      </div>
+      <p class="intro-copy">Filter by category or scroll through everything — each card opens the original LinkedIn post.</p>
+    </div>
+    <div class="filters reveal" id="filters">
+      <button class="chip active" data-filter="all" style="--dot:#150B27">All Collaborations</button>
+      <button class="chip" data-filter="qc" style="--dot:#F5A623"><span class="dot"></span>Quick Commerce</button>
+      <button class="chip" data-filter="ecom" style="--dot:#3B82F6"><span class="dot"></span>Ecommerce &amp; Retail</button>
+      <button class="chip" data-filter="fashion" style="--dot:#EC4899"><span class="dot"></span>Fashion &amp; Lifestyle</button>
+      <button class="chip" data-filter="auto" style="--dot:#14B8A6"><span class="dot"></span>Auto &amp; Mobility</button>
+      <button class="chip" data-filter="media" style="--dot:#8B5CF6"><span class="dot"></span>Media &amp; Wellness</button>
+      <button class="chip" data-filter="food" style="--dot:#EF4444"><span class="dot"></span>Food &amp; QSR</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WALL ============ -->
+<section class="wall" id="collabs">
+  <div class="wrap grid" id="grid">
+
+    <div class="card" data-cat="qc" style="--accent:var(--amber)">
+      <div class="card-top"><span class="card-index">N&deg; 01</span><span class="card-tag">Quick Commerce</span></div>
+      <div class="card-brand">FirstClub</div>
+      <p class="card-tagline">Spotlighting honest, quality grocery essentials for the modern Indian kitchen.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_firstclub-honestfood-grocery-ugcPost-7450394042430816256-5Xsg/" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="media" style="--accent:var(--violet)">
+      <div class="card-top"><span class="card-index">N&deg; 02</span><span class="card-tag">Digital Media</span></div>
+      <div class="card-brand">Story TV</div>
+      <p class="card-tagline">Championing homegrown, short-form storytelling for Indian audiences.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_storytv-indianapps-digitalmedia-share-7454485088265928704-jOkL/" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="qc" style="--accent:var(--amber)">
+      <div class="card-top"><span class="card-index">N&deg; 03</span><span class="card-tag">Quick Commerce</span></div>
+      <div class="card-brand">Zepto</div>
+      <p class="card-tagline">Because a 10-minute craving deserves a little extra cheese.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_if-adding-extra-cheese-is-wrong-i-genuinely-share-7468520239639511040-8u9s/" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="ecom" style="--accent:var(--blue)">
+      <div class="card-top"><span class="card-index">N&deg; 04</span><span class="card-tag">Ecommerce</span></div>
+      <div class="card-brand">Amazon</div>
+      <p class="card-tagline">Unpacking what instant, always-on ecommerce means for shoppers next.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_amazonnow-ecommerce-retail-share-7475833660835790848-BL3K/" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="fashion" style="--accent:var(--rose)">
+      <div class="card-top"><span class="card-index">N&deg; 05</span><span class="card-tag">Fashion &amp; Lifestyle</span></div>
+      <div class="card-brand">One8</div>
+      <p class="card-tagline">Backing a Made-in-India performance label built on discipline.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_one8-madeinindia-brandbuilding-share-7475421839507472384-4wWn/" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="auto" style="--accent:var(--teal)">
+      <div class="card-top"><span class="card-index">N&deg; 06</span><span class="card-tag">Auto &amp; Mobility</span></div>
+      <div class="card-brand">Tata EV</div>
+      <p class="card-tagline">Driving the conversation on India's shift to electric — Sierra EV.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_tatamotors-tataev-sierraev-ugcPost-7480883418399076353-HbDe/" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="auto" style="--accent:var(--teal)">
+      <div class="card-top"><span class="card-index">N&deg; 07</span><span class="card-tag">Auto &amp; Mobility</span></div>
+      <div class="card-brand">Rapido</div>
+      <p class="card-tagline">Riding for safer mobility and a better commute for women, every day.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_rapido-womenssafety-safemobility-share-7495698002146246657-aCCG/" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="media" style="--accent:var(--violet)">
+      <div class="card-top"><span class="card-index">N&deg; 08</span><span class="card-tag">Gifting</span></div>
+      <div class="card-brand">IGP</div>
+      <p class="card-tagline">Turning a simple Rakhi promise into a gifting story worth keeping.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_therakhipromise-igp-rakshabandhan-activity-7493630038278516737-j_1Q" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="fashion" style="--accent:var(--rose)">
+      <div class="card-top"><span class="card-index">N&deg; 09</span><span class="card-tag">Fashion Tech</span></div>
+      <div class="card-brand">Zilo</div>
+      <p class="card-tagline">Exploring the space where fashion meets technology, live.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_zilo-fashiontech-futureoffashion-activity-7493321809799352320-rAjz" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="fashion" style="--accent:var(--rose)">
+      <div class="card-top"><span class="card-index">N&deg; 10</span><span class="card-tag">Jewellery</span></div>
+      <div class="card-brand">Palmonas</div>
+      <p class="card-tagline">Styling everyday jewellery made for the modern woman's routine.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_palmonas-activity-7490685258464460800-5MOi" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="media" style="--accent:var(--violet)">
+      <div class="card-top"><span class="card-index">N&deg; 11</span><span class="card-tag">Audio Tech</span></div>
+      <div class="card-brand">NU Republic</div>
+      <p class="card-tagline">Earbuds that turned out to be about a lot more than just music.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_i-didnt-buy-these-earbuds-for-music-i-activity-7490620242252136448-lIt1" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="fashion" style="--accent:var(--rose)">
+      <div class="card-top"><span class="card-index">N&deg; 12</span><span class="card-tag">Matrimony</span></div>
+      <div class="card-brand">Nikah Forever</div>
+      <p class="card-tagline">Decoding the marketing playbook behind a modern matrimony brand.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_marketing-marketingstrategy-brandmarketing-activity-7483734109484208128-AwF_" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="media" style="--accent:var(--violet)">
+      <div class="card-top"><span class="card-index">N&deg; 13</span><span class="card-tag">Wellness</span></div>
+      <div class="card-brand">HK Vitals</div>
+      <p class="card-tagline">Building trust one wellness campaign at a time, backed by proof.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_one-thing-about-brand-campaigns-you-can-activity-7488245277187817472-Jixq" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card" data-cat="food" style="--accent:var(--red)">
+      <div class="card-top"><span class="card-index">N&deg; 14</span><span class="card-tag">Food &amp; QSR</span></div>
+      <div class="card-brand">KFC</div>
+      <p class="card-tagline">Bringing the "KFCwala" craving story to life for a hungry feed.</p>
+      <a class="card-link" href="https://www.linkedin.com/posts/kunalbinjewar_kfcwala-kfc-activity-7483782862228328448-W6xd" target="_blank" rel="noopener">View collab post on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+    <div class="card more" data-cat="all">
+      <h3 class="display">+30 collaborations and counting</h3>
+      <p>This wall gets updated with every new campaign. For the full, latest list, head over to my LinkedIn profile.</p>
+      <a class="card-link" href="https://www.linkedin.com/in/kunalbinjewar" target="_blank" rel="noopener">See more on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CTA / CONTACT ============ -->
+<section class="cta">
+  <div class="wrap cta-inner">
+    <h2 class="reveal">Got a brand in mind? <em>Let's build the next story.</em></h2>
+    <p class="reveal">Always open for the next brand campaign — DM on LinkedIn, drop a message on WhatsApp, or send an email directly.</p>
+    <div class="cta-actions reveal">
+      <a class="btn btn-solid" href="mailto:binjewarkunal@gmail.com">
+        Email me
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="https://wa.me/919725746345" target="_blank" rel="noopener">
+        WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/kunalbinjewar" target="_blank" rel="noopener">
+        LinkedIn Profile
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+      </a>
+    </div>
+    <div class="footer-meta">
+      <span>&copy; 2026 Kunal Binjewar &middot; Mumbai, Maharashtra, India</span>
+      <div class="footer-links">
+        <a href="mailto:binjewarkunal@gmail.com">binjewarkunal@gmail.com</a>
+        <a href="#collabs">Back to top</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Nav show/hide + scrolled state
+  const nav = document.getElementById('nav');
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 60);
+    if (y > lastY && y > 200) nav.classList.add('hide');
+    else nav.classList.remove('hide');
+    lastY = y;
+  }, { passive:true });
+
+  // Scroll reveal (progressive enhancement: only hide once JS confirms it can reveal)
+  const revealTargets = document.querySelectorAll('.card, .reveal');
+  if ('IntersectionObserver' in window){
+    revealTargets.forEach(el => el.classList.add('pre-reveal'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting){
+          e.target.classList.add('in-view');
+          e.target.classList.remove('pre-reveal');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold:0.14, rootMargin:'0px 0px -40px 0px' });
+    revealTargets.forEach(el => io.observe(el));
+  }
+
+  // Filters
+  const chips = document.querySelectorAll('.chip');
+  const cards = document.querySelectorAll('.card');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const filter = chip.dataset.filter;
+      cards.forEach(card => {
+        const cat = card.dataset.cat;
+        const show = filter === 'all' || cat === filter || cat === 'all';
+        card.classList.toggle('hidden-filter', !show);
+        if (show) card.classList.add('in-view');
+      });
+    });
+  });
+
+  // Animated stat counters
+  const stats = document.querySelectorAll('.stat b');
+  let counted = false;
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !counted){
+        counted = true;
+        stats.forEach(stat => {
+          const target = parseFloat(stat.dataset.count);
+          const suffix = stat.dataset.suffix || '';
+          const isDecimal = target % 1 !== 0;
+          let current = 0;
+          const duration = 1400;
+          const start = performance.now();
+          function tick(now){
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            current = target * eased;
+            stat.textContent = (isDecimal ? current.toFixed(1) : Math.round(current)) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        });
+      }
+    });
+  }, { threshold:0.5 });
+  document.querySelector('.stat-row') && statObserver.observe(document.querySelector('.stat-row'));
+
+  // Subtle parallax on hero blobs
+  const heroSection = document.querySelector('.hero');
+  const blob1 = document.querySelector('.blob-1');
+  const blob2 = document.querySelector('.blob-2');
+  if (heroSection){
+    heroSection.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 30;
+      const y = (e.clientY / window.innerHeight - 0.5) * 30;
+      blob1.style.transform = `translate(${x}px, ${y}px)`;
+      blob2.style.transform = `translate(${-x}px, ${-y}px)`;
+    });
+  }
+</script>
+</body>
+</html>
